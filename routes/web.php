@@ -16,11 +16,10 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
@@ -44,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+
 // // Email Verification Notice
 // Route::get('/email/verify', function () {
 //     return view('auth.verify-email');
@@ -60,5 +60,6 @@ Route::middleware(['auth'])->group(function () {
 //     $request->user()->sendEmailVerificationNotification();
 //     return back()->with('message', 'Verification link sent!');
 // })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
 
 require __DIR__.'/auth.php';
